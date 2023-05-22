@@ -5,15 +5,12 @@ const heading = document.querySelector('.caption h1');
 const description = document.querySelector('.caption p');
 
 const images = ["lacivert.jpg", "sehir.jpg", "mavi.jpg"];
-const headings = ["Laciverttir", "Sehirler", "Mavilik"];
+const headings = ["Vampire Game", "Hyper-Casual Game", "Surviving Game"];
 const descriptions = [
-  "The city that never sleeps",
-  "The city of Lights",
-  "Home to the tallest skyscraper"
+  "Vampires are myths... Aren't they?",
+  "This game will make you crazy!",
+  "A survival game with weapons."
 ];
-
-let id = 0;
-let intervalId;
 
 /*
 function slide(id) {
@@ -39,6 +36,9 @@ function slide(id) {
 }
 */
 
+let id = 0;
+let intervalId;
+
 function slide(id) {
     for (let i = 0; i < slider.length; i++) {
         slider[i].style.backgroundImage = `url(imgs/${images[id]})`;
@@ -58,21 +58,12 @@ function startSlider() {
       id = 0;
     }
     slide(id);
-  }, 5000); // Change the duration (in milliseconds) between each slide here
+  }, 5000); //miliseconds
 }
 
 function stopSlider() {
   clearInterval(intervalId);
 }
-
-arrLeft.addEventListener('click', () => {
-  id--;
-  if (id < 0) {
-    id = images.length - 1;
-  }
-  slide(id);
-  stopSlider();
-});
 
 arrRight.addEventListener('click', () => {
   id++;
@@ -83,5 +74,13 @@ arrRight.addEventListener('click', () => {
   stopSlider();
 });
 
-// Start the automatic sliding
+arrLeft.addEventListener('click', () => {
+  id--;
+  if (id < 0) {
+    id = images.length - 1;
+  }
+  slide(id);
+  stopSlider();
+});
+
 startSlider();
