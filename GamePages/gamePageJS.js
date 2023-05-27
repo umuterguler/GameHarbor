@@ -41,7 +41,7 @@ let intervalId;
 
 function slide(id) {
     for (let i = 0; i < actionGamesSlider.length; i++) {
-        actionGamesSlider[i].style.backgroundImage = `url(imgs/${actionGamesImages[id]})`;
+        actionGamesSlider[i].style.backgroundImage = `url(/imgs/${actionGamesImages[id]})`;
         actionGamesSlider[i].classList.add('image-fade');
         setTimeout(() => {
             actionGamesSlider[i].classList.remove('image-fade');
@@ -83,4 +83,3 @@ actionGamesArrLeft.addEventListener('click', () => {
   stopSlider();
 });
 
-startSlider();

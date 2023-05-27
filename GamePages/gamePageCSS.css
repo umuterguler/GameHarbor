@@ -12,7 +12,7 @@
 body{
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,116,126,1) 0%, rgba(133,164,178,1) 47%, rgba(179,193,205,1) 100%);
-    
+    font-family: Arial, sans-serif;
     
 }
 
@@ -148,7 +148,7 @@ button:hover::before {
     min-height: 30em;
     height: 10vh;
     position: relative;
-    background-image: url(imgs/mavi.jpg) ;
+    background-image: url(/imgs/mavi.jpg) ;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -271,11 +271,15 @@ button:hover::before {
     cursor:pointer;
 }
 .container{
-    float: left;
-    margin: 0 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 30px;
+
     padding: 20px;
     width: 60%;
-    height: 1000px;;
+    height: 100%;;
     align-items: center;
     text-align: center;
     border: 5px solid darkslategray;
@@ -287,6 +291,7 @@ button:hover::before {
     height: 100px;
     background: whitesmoke;
     border: 2px solid #2f4f4f;
+   
   }
 
 .article-wrapper {
@@ -371,14 +376,13 @@ button:hover::before {
     letter-spacing: -0.6px
   }
   
-
-  
   
   .game_Item{
-    border: 4px solid #2f4f4f;
+    border: 1px solid #2f4f4f;
     border-radius: 30px;
-    padding: 25px;
+    padding: 25px;   
 }
+
 .item_Img{
     width: 100%; /* or any custom size */
     height: 100%; 
