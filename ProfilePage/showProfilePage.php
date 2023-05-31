@@ -48,7 +48,7 @@ else
 
     <div class="container">
         <div class="profile-header">
-          <img src="/imgs/account.png" alt="Profil Fotoğrafi" class="profile-picture">
+          <img src="/imgs/account.png" alt="Profil Fotografi" class="profile-picture">
           <h2 class="profile-name"><?= htmlspecialchars($user["name"]) ?></h2>
           <p class="profile-username">@<?= htmlspecialchars($user["username"]) ?></p>
           <p class="profile-email"><?= htmlspecialchars($user["email"]) ?></p>

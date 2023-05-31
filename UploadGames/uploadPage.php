@@ -19,6 +19,8 @@ else
     header("Location: /ProfilePage/loginPage.php");
 }
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -46,21 +48,37 @@ else
         </nav>
     </header>
     <section class="game_Info">
-        <form>
-            <h3>Game Name</h3>
-            <textarea class="game_Name" type="text" placeholder="Game Name" required></textarea> <br>
+        <?php if(isset($_GET['error'])): ?>
+            <p> <?php echo $_GET['error']; ?> </p>
+        <?php endif ?>
+
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+
+            <!-- <h3>Game Name</h3>
+            <input class="game_Name" type="text" placeholder="Game Name" required> <br>
+
             <h3>Game Description</h3>
-            <textarea class="game_Description" type="text" placeholder="Game Description" required></textarea> <br>
+            <input class="game_Description" type="text" placeholder="Game Description" required> <br>
+
             <h3>Game Credits</h3>
-            <textarea class="game_Credits" type="text" placeholder="Game Credits"></textarea required> <br>
+            <input class="game_Credits" type="text" placeholder="Game Credits" required> <br> -->
+            <!-- id="image_Input" accept="image/jpg, image/png" required -->
+            
+            <h1>Game Name</h1>
+            <textarea class="game_Name" placeholder="Game Name" name="name"></textarea>
+
+            <h2>Game Description</h2>
+            <textarea class="game_Credits" type="text" placeholder="Game Description" name="message"></textarea>
+
             <h3>Game Photos</h3>
-            <input class="game_Photo" type="file" id="image_Input" accept="image/jpg, image/png" required> <br>
-            <input class="game_Photo" type="file" id="image_Input" accept="image/jpg, image/png" required> <br>
-            <input class="game_Photo" type="file" id="image_Input" accept="image/jpg, image/png"> <br>
-            <input class="game_Photo" type="file" id="image_Input" accept="image/jpg, image/png"> <br>
-            <div id="send_Button">
+            <input class="game_Photo" type="file" name="gameImage" > <br>
+
+
+            <input type="submit" name="submit" value="Upload">
+
+            <!-- <div id="send_Button">
                 <button>Send</button>
-            </div>
+            </div> -->
         </form>
     </section>
 </body> 

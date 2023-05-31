@@ -1,3 +1,34 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION["user_id"])) {
+    
+    $mysqli = require __DIR__ . "/../ProfilePage/database.php";
+    
+    $sql = "SELECT * FROM user JOIN upload";
+            
+    $result = $mysqli->query($sql);
+    
+    $user = $result->fetch_assoc();
+    $upload = $result->fetch_assoc();   
+    
+}
+
+else
+{
+    header("Location: loginPage.php");
+}
+
+// $mysqli = require __DIR__ . "/../UploadGames/uploadDB.php";
+// $sql2 = "SELECT * FROM upload ORDER BY id";
+
+// $result2 = $mysqli->query($sql2);
+    
+// $upload = $result2->fetch_assoc();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,18 +64,10 @@
                     <i class="arrow-right;">&gt;</i>
                 </div>
             </section>
-            <div id="game_Discription">
-                <br>
-                <h1 id="game_Title">Game Name</h1>
-                <br>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-                    culpa qui officia deserunt mollit anim id est laborum.
-                </p>
+            <div id="game_Discription"><br>
+                <h1 id="game_Title"><?= htmlspecialchars($upload["game_name"]) ?></h1>
+                <p><?= htmlspecialchars($upload["game_description"]) ?></p>
+                
             </div>
             <div id="credits">
                 <br>
