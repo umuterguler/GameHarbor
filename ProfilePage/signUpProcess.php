@@ -40,9 +40,19 @@ $stmt->bind_param("ssss",
                   $password_hash
 );
 
-$stmt -> execute();
+if ($stmt->execute()) {
+
+    header("Location: signup-success.html");
+    exit;
+    
+} else {
+    
+    if ($mysqli->errno === 1062) {
+        die("email already taken");
+    } else {
+        die($mysqli->error . " " . $mysqli->errno);
+    }
+}
 
 // print_r($_POST);
 // var_dump($password_hash);
-
-echo "Signup Succesful";

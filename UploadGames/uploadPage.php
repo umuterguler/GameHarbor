@@ -1,3 +1,26 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION["user_id"])) {
+    
+    $mysqli = require __DIR__ . "/../ProfilePage/database.php";
+    
+    $sql = "SELECT * FROM user
+            WHERE id = {$_SESSION["user_id"]}";
+            
+    $result = $mysqli->query($sql);
+    
+    $user = $result->fetch_assoc();
+}
+
+else
+{
+    header("Location: /ProfilePage/loginPage.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +34,13 @@
 <body>
     
     <header>
-        <a href="/HomePage/index.html"><img class="nav__logo" src="/imgs/logo.png" alt="error"/></a>     
+        <a href="/HomePage/index.php"><img class="nav__logo" src="/imgs/logo.png" alt="error"/></a>     
         <nav>
             <ul class="nav__links">
                 <li><a> <input id="search_Bar" type="search" placeholder="Game Search"> <button id="search_Button">&#128270</button> </a></li>
-                <li><a href="/HomePage/index.html"><button>Home Page</button></a></li>
-                <li><a href="uploadPage.html"><Button>Upload Game</Button></a></li>
-                <li><a href="/ProfilePage/profilePage.html"><button>Profile</button></a></li>
+                <li><a href="/HomePage/index.php"><button>Home Page</button></a></li>
+                <li><a href="uploadPage.php"><Button>Upload Game</Button></a></li>
+                <li><a href="/ProfilePage/showProfilePage.php"><button>Profile</button></a></li>
                 <li><a href="/contactPage.html"><button>Contact</button></a></a></li>
             </ul>
         </nav>

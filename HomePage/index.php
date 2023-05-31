@@ -11,15 +11,14 @@
 <body>
     
     <header>
-        <a href="index.html"><img class="nav__logo" src="/imgs/logo.png" alt="error"/></a>     
+        <a href="index.php"><img class="nav__logo" src="/imgs/logo.png" alt="error"/></a>     
         <nav>
             <ul class="nav__links">
                 <li><a> <input id="search_Bar" type="search" placeholder="Game Search"> <button id="search_Button">&#128270</button> </a></li>
-                <li><a href="index.html"><button>Home Page</button></a></li>
-                <li><a href="/UploadGames/uploadPage.html"><Button>Upload Game</Button></a></li>
-                <li><a href="/ProfilePage/profilePage.html"><button>Profile</button></a></li>
+                <li><a href="index.php"><button>Home Page</button></a></li>
+                <li><a href="/UploadGames/uploadPage.php"><Button>Upload Game</Button></a></li>
+                <li><a href="/ProfilePage/showProfilePage.php"><button>Profile</button></a></li>
                 <li><a href="/contactPage.html"><button>Contact</button></a></a></li>
-                <li><a href="/ProfilePage/showProfilePage.html"><button>Tmp Profile</button></a></a></li>
             </ul>
         </nav>
     </header>
