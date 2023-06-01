@@ -1,33 +1,23 @@
 <?php
 
-session_start();
+$parts = explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
-if (isset($_SESSION["user_id"])) {
-    
-    $mysqli = require __DIR__ . "/../ProfilePage/database.php";
-    
-    $sql = "SELECT * FROM user JOIN upload";
-            
-    $result = $mysqli->query($sql);
-    
-    $user = $result->fetch_assoc();
-    $upload = $result->fetch_assoc();   
-    
-}
+$parts[0]; 
+$parts[1]; 
+$parts[2];
+$id = $parts[3];
+intval($id);
 
-else
-{
-    header("Location: loginPage.php");
-}
+require 'config.php';
 
-// $mysqli = require __DIR__ . "/../UploadGames/uploadDB.php";
-// $sql2 = "SELECT * FROM upload ORDER BY id";
+$upload = DB::get("SELECT * FROM upload WHERE id = $id");
 
-// $result2 = $mysqli->query($sql2);
-    
-// $upload = $result2->fetch_assoc();
+
+
 
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,9 +36,9 @@ else
         <nav>
             <ul class="nav__links">
                 <li><a> <input id="search_Bar" type="search" placeholder="Game Search"> <button id="search_Button">&#128270</button> </a></li>
-                <li><a href="/HomePage/index.html"><button>Home Page</button></a></li>
-                <li><a href="/UploadGames/uploadPage.html"><Button>Upload Game</Button></a></li>
-                <li><a href="/ProfilePage/profilePage.html"><button>Profile</button></a></li>
+                <li><a href="/HomePage/index.php"><button>Home Page</button></a></li>
+                <li><a href="/UploadGames/uploadPage.php"><Button>Upload Game</Button></a></li>
+                <li><a href="/ProfilePage/showProfilePage.php">><button>Profile</button></a></li>
                 <li><a href="/contactPage.html"><button>Contact</button></a></a></li>
             </ul>
         </nav>
@@ -60,13 +50,14 @@ else
                 <div class="left_Arrow">
                     <i class="arrow-left">&lt;</i>
                 </div>
+                <output type="file" src="<?php $upload[0]->image_url_1?>" id="myfile" name="myfile">
                 <div class="right_Arrow">
                     <i class="arrow-right;">&gt;</i>
                 </div>
             </section>
             <div id="game_Discription"><br>
-                <h1 id="game_Title"><?= htmlspecialchars($upload["game_name"]) ?></h1>
-                <p><?= htmlspecialchars($upload["game_description"]) ?></p>
+                <h1 id="game_Title"><?php echo $upload[0]->game_name ?></h1>
+                <p><?php echo $upload[0]->game_description ?></p>
                 
             </div>
             <div id="credits">

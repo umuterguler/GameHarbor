@@ -42,7 +42,7 @@
         <main class="game_Types">
             <div class="game_Type">
                 <h4>Action</h4>
-                <a href="/GamePages/actionGames.html">
+                <a href="/GamePages/actionGames.php">
                     <img src="/imgs/action.png" class="game_Img" alt=""> </a>
             </div>
             <div class="game_Type">
