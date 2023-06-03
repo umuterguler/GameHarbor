@@ -53,7 +53,10 @@ else
           <p class="profile-username">@<?= htmlspecialchars($user["username"]) ?></p>
           <p class="profile-email"><?= htmlspecialchars($user["email"]) ?></p>
         </div>
-        <li><a href="logoutPage.php"><button>Log Out</button></a></li>
+
+        <li><a href="passwordChange.php"><button id="btn3">Change Password</button></a></li>
+        <li><a href="emailChange.php"><button id="btn3">Change E-mail</button></a></li>
+        <li><a href="logoutPage.php"><button id="btn3">Log Out</button></a></li>
         
     </div>
             

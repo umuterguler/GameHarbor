@@ -12,9 +12,6 @@ require 'config.php';
 
 $upload = DB::get("SELECT * FROM upload WHERE id = $id");
 
-
-
-
 ?>
 
 
@@ -47,13 +44,12 @@ $upload = DB::get("SELECT * FROM upload WHERE id = $id");
     <section >
         <div class="container" >
             <section class="image_Slider">
-                <div class="left_Arrow">
-                    <i class="arrow-left">&lt;</i>
-                </div>
-                <output type="file" src="<?php $upload[0]->image_url_1?>" id="myfile" name="myfile">
-                <div class="right_Arrow">
-                    <i class="arrow-right;">&gt;</i>
-                </div>
+               
+            <?php
+                $imgPath = "/UploadGames/uploads/" . $upload[0]->image_url_1;
+                echo '<img src="' . $imgPath . '" alt="imggg">';
+            ?>
+                
             </section>
             <div id="game_Discription"><br>
                 <h1 id="game_Title"><?php echo $upload[0]->game_name ?></h1>
@@ -79,6 +75,6 @@ $upload = DB::get("SELECT * FROM upload WHERE id = $id");
             
         </div>
     </section>
-    <script src="gamePageJS.js"></script>
+
 </body>
 </html>

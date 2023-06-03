@@ -52,7 +52,7 @@ else
             <p> <?php echo $_GET['error']; ?> </p>
         <?php endif ?>
 
-        <form action="upload.php" method="post" enctype="multipart/form-data">
+        <form  action="upload.php" method="post" enctype="multipart/form-data">
 
             <!-- <h3>Game Name</h3>
             <input class="game_Name" type="text" placeholder="Game Name" required> <br>
@@ -68,13 +68,13 @@ else
             <textarea class="game_Name" placeholder="Game Name" name="name"></textarea>
 
             <h2>Game Description</h2>
-            <textarea class="game_Credits" type="text" placeholder="Game Description" name="message"></textarea>
+            <textarea class="game_Description" type="text" placeholder="Game Description" name="message"></textarea>
 
             <h3>Game Photos</h3>
             <input class="game_Photo" type="file" name="gameImage" > <br>
 
 
-            <input type="submit" name="submit" value="Upload">
+            <input id="form-input" type="submit" name="submit" value="Upload">
 
             <!-- <div id="send_Button">
                 <button>Send</button>

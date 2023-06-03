@@ -32,7 +32,7 @@ if (isset($_POST['submit']) && isset($_FILES['gameImage']) && isset($_POST['name
                     VALUES('$game_name','$game_description','$new_img_name')";
                 
             mysqli_query($conn,$sql);
-            header("Location: /GamePages/actionGames.php");
+            header("Location: /GamePages/allGames.php");
 
 
         }else{

@@ -11,6 +11,7 @@ if (isset($_SESSION["user_id"])) {
     $result = $mysqli->query($sql);
     
     $user = $result->fetch_assoc();
+
 }
 
 ?>
@@ -32,12 +33,14 @@ if (isset($_SESSION["user_id"])) {
         <img class="nav__logo" src="/imgs/logo.png" alt="error"/>     
     
         <?php if (isset($user)): 
-            
+            session_start();
+            session_regenerate_id();
             header("Location: /HomePage/index.php");
             ?>
 
         <?php else:
-            header("Location: loginPage.php")
+            session_destroy();
+            header("Location: loginPage.php");
             ?>
                    
         <?php endif; ?>

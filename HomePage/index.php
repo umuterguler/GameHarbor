@@ -1,3 +1,10 @@
+<?php
+require 'config.php';
+$games = DB::get("SELECT * FROM upload ORDER BY id DESC");
+$gms[] = DB::get("SELECT * FROM upload ORDER BY id DESC");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +35,16 @@
             <i class="arrow-left">&lt;</i>
         </div>
 
+        <div class="main_Slider">
+            <?php 
+            $imgPath = "/UploadGames/uploads/" . $games[0]->image_url_1;
+            echo '<img src="' . $imgPath . '" alt="imggg">';
+            foreach ($gms as $image) {
+                    echo '<div class="slider-image" style="background-image: url(' . $imgPath . ')"></div>';
+            } 
+            ?>
+        </div>
+
         <div class="right_Arrow">
             <i class="arrow-right;">&gt;</i>
         </div>
@@ -42,38 +59,12 @@
         <main class="game_Types">
             <div class="game_Type">
                 <h4>Action</h4>
-                <a href="/GamePages/actionGames.php">
+                <a href="/GamePages/allGames.php">
                     <img src="/imgs/action.png" class="game_Img" alt=""> </a>
-            </div>
-            <div class="game_Type">
-                <h4>Strategy</h4>
-                <a href="/GamePages/strategyGames.html">
-                    <img src="/imgs/strategy.png" class="game_Img" alt=""> </a>
-            </div>
-            <div class="game_Type">
-                <h4>Sport</h4>
-                <a href="/GamePages/sportGames.html">
-                    <img src="/imgs/sport.png" class="game_Img" alt=""> </a>
-            </div>
-            <div class="game_Type">
-                <h4>Sport</h4>
-                <a href="/GamePages/shooterGames.html">
-                    <img src="/imgs/shooter.png" class="game_Img" alt=""> </a>
-            </div>
-            <div class="game_Type">
-                <h4>RPG</h4>
-                <a href="/GamePages/RPGGames.html">
-                    <img src="/imgs/rpg.png" class="game_Img" alt=""> </a>
-            </div>
-            <div class="game_Type">
-                <h4>Adventure</h4>
-                <a href="/GamePages/adventureGames.html">
-                    <img src="/imgs/adventure.png" class="game_Img" alt=""> </a>
             </div>
         </main>
 
     </section>
-    
-    <script src="scriptHome.js"></script>
+
 </body>
 </html>
