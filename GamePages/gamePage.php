@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $parts = explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
@@ -11,6 +12,15 @@ intval($id);
 require 'config.php';
 
 $upload = DB::get("SELECT * FROM upload WHERE id = $id");
+
+$mysqli = require __DIR__ . "/../ProfilePage/database.php";
+    
+$sql = "SELECT * FROM user
+        WHERE id = {$_SESSION["user_id"]}";
+            
+$result = $mysqli->query($sql);
+    
+$user = $result->fetch_assoc();
 
 ?>
 
@@ -67,8 +77,14 @@ $upload = DB::get("SELECT * FROM upload WHERE id = $id");
                           </div>
                           <div class="project-info">
                             <div class="flex-pr">
-                                <div class="project-title text-nowrap">Mert Göksu</div>                            
-                          </div>
+                                <div class="project-title text-nowrap"> 
+                                    <?php echo $upload[0]->credit ?> 
+                                    <!-- <a href="gamePage.php<? //php echo "/". $v->id ?>"> -->
+                                        <img class="item_Img" src="<?php echo $photo ?>" alt="">
+                                    </a>
+                                </div>                            
+                            </div>
+                            
                       </article>
                 </section>
             </div>

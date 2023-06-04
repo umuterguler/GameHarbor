@@ -153,12 +153,11 @@ button:hover::before {
 
 .game_Info{
 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    display: block; 
+    margin: auto;
 
     margin-bottom: 50px;
-    height: 200px;
+    height: auto;
     width: 500px;
     text-align: center;
     background-color: white;

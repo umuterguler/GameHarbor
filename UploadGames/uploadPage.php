@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 if (isset($_SESSION["user_id"])) {
@@ -18,10 +17,40 @@ else
 {
     header("Location: /ProfilePage/loginPage.php");
 }
+// echo $user["username"];
 
+
+
+    
+    
+    
+   
+    
+    
+
+    // $mysqli = require __DIR__ . "/../ProfilePage/database.php";
+
+    // $sql = "SELECT * FROM user
+    //         WHERE id = {$_SESSION["user_id"]}";
+
+    // $sql = "SELECT * FROM upload
+    //         WHERE id = $id";
+
+    // $autoCredit = $user['username'];
+    
+    // $update_query = "UPDATE upload SET credit = 'sa' WHERE id= $id";
+
+    // $result =  $mysqli->query($update_query);
+
+    // $upload = $result->fetch_assoc();
+    
+
+
+// $mysqli2 = require __DIR__ . "/../ProfilePage/database.php";
 
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,8 +67,13 @@ else
     <header>
         <a href="/HomePage/index.php"><img class="nav__logo" src="/imgs/logo.png" alt="error"/></a>     
         <nav>
+            
             <ul class="nav__links">
-                <li><a> <input id="search_Bar" type="search" placeholder="Game Search"> <button id="search_Button">&#128270</button> </a></li>
+                <form class="full_search_form" action="/ProfilePage/publicProfilePage.php" method="post" enctype="multipart/form-data">
+                    <input id="search_Bar" type="text" placeholder="Profile Search" name="search_name">
+                    <button id="search_Button" type="submit">&#128270</button>
+                </form>
+
                 <li><a href="/HomePage/index.php"><button>Home Page</button></a></li>
                 <li><a href="uploadPage.php"><Button>Upload Game</Button></a></li>
                 <li><a href="/ProfilePage/showProfilePage.php"><button>Profile</button></a></li>
@@ -65,17 +99,19 @@ else
             <!-- id="image_Input" accept="image/jpg, image/png" required -->
             
             <h1>Game Name</h1>
-            <textarea class="game_Name" placeholder="Game Name" name="name"></textarea>
+            <textarea class="game_Name" type="text" placeholder="Game Name" name="name"></textarea><br><br>
 
             <h2>Game Description</h2>
-            <textarea class="game_Description" type="text" placeholder="Game Description" name="message"></textarea>
+            <textarea class="game_Description" type="text" placeholder="Game Description" name="message"></textarea><br>
 
-            <h3>Game Photos</h3>
-            <input class="game_Photo" type="file" name="gameImage" > <br>
+            <h3>Credit</h2>
+            <textarea class="game_Credit" type="text" name="credit" readonly><?php echo "@". $user["username"] ?></textarea><br><br>
 
+
+            <h4>Game Photos</h3>
+            <input class="game_Photo" type="file" name="gameImage" > <br><br>
 
             <input id="form-input" type="submit" name="submit" value="Upload">
-
             <!-- <div id="send_Button">
                 <button>Send</button>
             </div> -->

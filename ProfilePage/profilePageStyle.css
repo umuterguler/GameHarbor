@@ -172,3 +172,14 @@ button:hover::before {
     margin-bottom: 2px;
 }
 
+#btn3{
+    padding: auto;
+    position: relative;
+    padding: 8px 15px;
+
+    margin: auto;
+    margin-top: 5%;
+    flex-wrap: wrap;
+    width: 100%;
+
+}

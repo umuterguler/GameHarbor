@@ -15,6 +15,7 @@ if (isset($_POST['submit']) && isset($_FILES['gameImage']) && isset($_POST['name
 
     $game_name = validate($_POST['name']);
 	$game_description = validate($_POST['message']);
+    $game_credit = validate($_POST['credit']);
 
     if($error === 0){
         
@@ -28,8 +29,8 @@ if (isset($_POST['submit']) && isset($_FILES['gameImage']) && isset($_POST['name
             $img_upload_path = 'uploads/'.$new_img_name ;
             move_uploaded_file( $tmp_name , $img_upload_path );
             //inserting to db
-            $sql = "INSERT INTO upload(game_name,game_description,image_url_1) 
-                    VALUES('$game_name','$game_description','$new_img_name')";
+            $sql = "INSERT INTO upload(game_name,game_description,image_url_1,credit) 
+                    VALUES('$game_name','$game_description','$new_img_name','$game_credit')";
                 
             mysqli_query($conn,$sql);
             header("Location: /GamePages/allGames.php");

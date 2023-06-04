@@ -37,7 +37,9 @@ $games = DB::get("SELECT * FROM upload ORDER BY id DESC");
         ?>
         <article class="article-wrapper">
             <div class="rounded-lg container-project">
-                <a href="gamePage.php<?php echo "/". $v->id ?>"><img class="item_Img" src="<?php echo $photo ?>" alt=""></a>
+                <a href="gamePage.php<?php echo "/". $v->id ?>">
+                    <img class="item_Img" src="<?php echo $photo ?>" alt="">
+                </a>
               </div>
               <div class="project-info">
                 <div class="flex-pr">

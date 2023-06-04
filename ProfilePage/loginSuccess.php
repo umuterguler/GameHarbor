@@ -14,6 +14,8 @@ if (isset($_SESSION["user_id"])) {
 
 }
 
+
+
 ?>
 
 
@@ -31,19 +33,19 @@ if (isset($_SESSION["user_id"])) {
     
     <header>
         <img class="nav__logo" src="/imgs/logo.png" alt="error"/>     
-    
-        <?php if (isset($user)): 
-            session_start();
-            session_regenerate_id();
-            header("Location: /HomePage/index.php");
-            ?>
 
-        <?php else:
-            session_destroy();
-            header("Location: loginPage.php");
-            ?>
-                   
-        <?php endif; ?>
+        <?php
+            if (isset($user)){
+                session_start();
+                session_regenerate_id();
+                header("Location: /HomePage/index.php");
+            } 
+            else{
+                session_destroy();
+                header("Location: loginPage.php");
+            }
+        ?>
+
         
     </header>   
 </body>
