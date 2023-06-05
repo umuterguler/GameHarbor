@@ -144,7 +144,7 @@ button:hover::before {
 }
 
 .contact-icon{
-    width: 70px; /* or any custom size */
+    width: 70px; 
     height: 70px; 
     object-fit: contain;
     

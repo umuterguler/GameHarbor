@@ -19,6 +19,34 @@ else
     header("Location: loginPage.php");
 }
 
+switch (true) {
+    case (0 <= $user['game_counter'] && $user['game_counter'] <= 3):
+        $role = "Newbie";
+        break;
+    case (3 < $user['game_counter'] && $user['game_counter'] <= 10):
+        $role = "Amateur";
+        break;
+    case (10 < $user['game_counter'] && $user['game_counter'] <= 15):
+        $role = "Rising Star";
+        break;
+    case (15 < $user['game_counter'] && $user['game_counter'] <= 20):
+        $role = "Experienced Player";
+        break;
+    case (20 < $user['game_counter'] && $user['game_counter'] <= 25):
+        $role = "Senior Game Enthusiast";
+        break;
+    case (25 < $user['game_counter'] && $user['game_counter'] <= 30):
+        $role = "Advanced Gamer";
+        break;
+    case ($user['game_counter'] > 30):
+        $role = "Ultra Super Duper Extreme Insane Player";
+        break;
+    default:
+        echo "Unknown Role";
+        break;
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -37,8 +65,12 @@ else
         <a href="/HomePage/index.php"><img class="nav__logo" src="/imgs/logo.png" alt="error"/></a>     
         <nav>
             <ul class="nav__links">
-                <form class="full_search_form" action="/ProfilePage/publicProfilePage.php" method="post" enctype="multipart/form-data">
-                    <input id="search_Bar" type="text" placeholder="Profile Search" name="search_name">
+                <form class="full_search_form" action="publicProfilePage.php" method="post" enctype="multipart/form-data">
+                    <input id="search_Bar" type="text" placeholder="Profile Search(without @)" name="search_name">
+                    <button id="search_Button" type="submit">&#128270</button>
+                </form>
+                <form class="full_search_form" action="/GamePages/searchGamePage.php" method="post" enctype="multipart/form-data">
+                    <input id="search_Bar" type="text" placeholder="Game Search" name="search_game">
                     <button id="search_Button" type="submit">&#128270</button>
                 </form>
                 <li><a href="/HomePage/index.php"><button>Home Page</button></a></li>
@@ -51,11 +83,13 @@ else
    
     
     <div class="container">
-        <div class="profile-header">
-          <img src="/imgs/account.png" alt="Profil Fotografi" class="profile-picture">
-          <h2 class="profile-name"><?= htmlspecialchars($user["name"]) ?></h2>
-          <p class="profile-username">@<?= htmlspecialchars($user["username"]) ?></p>
-          <p class="profile-email"><?= htmlspecialchars($user["email"]) ?></p>
+        <div class="profile_header">
+          <img src="/imgs/account.png" alt="Profil Fotografi" class="profile_picture">
+          <h2 class="profile_name"><?= htmlspecialchars($user["name"]) ?></h2>
+          <p class="profile_username"><?= "Username: @" . htmlspecialchars($user["username"]) ?></p>
+          <p class="profile_email"><?= "E-Mail: " . htmlspecialchars($user["email"]) ?></p>
+          <p class="profile_game_counter"> <?php echo "Uploaded Games: " . $user['game_counter']  ?>  </p>
+          <p class="profile_role"> <?php echo "User Role: " .  $role ?>  </p>
         </div>
 
         <li><a href="passwordChange.php"><button id="btn3">Change Password</button></a></li>

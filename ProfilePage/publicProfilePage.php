@@ -5,7 +5,7 @@
 
         // $_POST = $search_name;
         $search_name = $_POST['search_name'];
-        $sql2 = "SELECT * FROM user WHERE username = '$search_name'";
+        $sql2 = "SELECT * FROM user WHERE username COLLATE utf8mb4_unicode_ci = '$search_name'";
         $result = $mysqli->query($sql2);
         
         
@@ -15,6 +15,34 @@
         } else {
             header("Location: /ProfilePage/noUserExist.php");
         }
+
+        switch (true) {
+            case (0 <= $user['game_counter'] && $user['game_counter'] <= 3):
+                $role = "Newbie";
+                break;
+            case (3 < $user['game_counter'] && $user['game_counter'] <= 10):
+                $role = "Amateur";
+                break;
+            case (10 < $user['game_counter'] && $user['game_counter'] <= 15):
+                $role = "Rising Star";
+                break;
+            case (15 < $user['game_counter'] && $user['game_counter'] <= 20):
+                $role = "Experienced Player";
+                break;
+            case (20 < $user['game_counter'] && $user['game_counter'] <= 25):
+                $role = "Senior Game Enthusiast";
+                break;
+            case (25 < $user['game_counter'] && $user['game_counter'] <= 30):
+                $role = "Advanced Gamer";
+                break;
+            case ($user['game_counter'] > 30):
+                $role = "Ultra Super Duper Extreme Insane Player";
+                break;
+            default:
+                echo "Unknown Role";
+                break;
+        }
+        
     
 ?>
 
@@ -35,8 +63,12 @@
         <nav>
             <ul class="nav__links">
 
-                <form class="full_search_form" action="/ProfilePage/publicProfilePage.php" method="post" enctype="multipart/form-data">
-                    <input id="search_Bar" type="text" placeholder="Profile Search" name="search_name">
+                <form class="full_search_form" action="publicProfilePage.php" method="post" enctype="multipart/form-data">
+                    <input id="search_Bar" type="text" placeholder="Profile Search(without @)" name="search_name">
+                    <button id="search_Button" type="submit">&#128270</button>
+                </form>
+                <form class="full_search_form" action="/GamePages/searchGamePage.php" method="post" enctype="multipart/form-data">
+                    <input id="search_Bar" type="text" placeholder="Game Search" name="search_game">
                     <button id="search_Button" type="submit">&#128270</button>
                 </form>
                 
@@ -50,11 +82,13 @@
    
     
     <div class="container">
-        <div class="profile-header">
-          <img src="/imgs/account.png" alt="Profil Fotografi" class="profile-picture">
-          <h2 class="profile-name"> <?php echo $user['name'] ?>  </h2>
-          <p class="profile-username"> <?php echo $user['username'] ?>  </p>
-          <p class="profile-email"> <?php echo $user['email'] ?>  </p>
+        <div class="profile_header">
+          <img src="/imgs/account.png" alt="Profil Fotografi" class="profile_picture">
+          <h2 class="profile_name"> <?php echo  $user['name'] ?>  </h2>
+          <p class="profile_username"> <?php echo "Username: @" . $user['username'] ?>  </p>
+          <p class="profile_email"> <?php echo "E-Mail: " . $user['email'] ?>  </p>
+          <p class="profile_game_counter"> <?php echo "Uploaded Games: " . $user['game_counter']  ?>  </p>
+          <p class="profile_role"> <?php echo "User Role: " .  $role ?>  </p>
         </div>
 
 

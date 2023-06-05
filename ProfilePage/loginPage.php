@@ -50,7 +50,14 @@ $is_invalid = true;
       <a href="/HomePage/index.php"><img class="nav__logo" src="/imgs/logo.png" alt="error"/></a> 
         <nav>
             <ul class="nav__links">
-                <li><a> <input id="search_Bar" type="search" placeholder="Game Search"> <button id="search_Button">&#128270</button> </a></li>
+                <form class="full_search_form" action="publicProfilePage.php" method="post" enctype="multipart/form-data">
+                    <input id="search_Bar" type="text" placeholder="Profile Search(without @)" name="search_name">
+                    <button id="search_Button" type="submit">&#128270</button>
+                </form>
+                <form class="full_search_form" action="/GamePages/searchGamePage.php" method="post" enctype="multipart/form-data">
+                    <input id="search_Bar" type="text" placeholder="Game Search" name="search_game">
+                    <button id="search_Button" type="submit">&#128270</button>
+                </form>
                 <li><a href="/HomePage/index.php"><button>Home Page</button></a></li>
                 <li><a href="/UploadGames/uploadPage.php"><Button>Upload Game</Button></a></li>
                 <li><a href="loginPage.php"><button>Profile</button></a></li>

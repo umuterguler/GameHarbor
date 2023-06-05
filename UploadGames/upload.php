@@ -1,14 +1,20 @@
 <?php
-
+session_start();
 if (isset($_POST['submit']) && isset($_FILES['gameImage']) && isset($_POST['name']) && isset($_POST['message'])){
     include "uploadDB.php";
+    
+
+
+    $sql3 = "SELECT * FROM user WHERE id = {$_SESSION["user_id"]}";
+    $sql_update_count = "UPDATE user SET game_counter = game_counter + 1 WHERE id = '{$_SESSION["user_id"]}'";
+    mysqli_query($conn, $sql_update_count);
 
     $img_name = $_FILES['gameImage']['name'];
 	$tmp_name = $_FILES['gameImage']['tmp_name'];
 	$error = $_FILES['gameImage']['error'];
     function validate($data){
         $data = trim($data);
-        $data = stripslashes($data);
+        $data = stripslashes($data);    
         $data = htmlspecialchars($data);
         return $data;
     }

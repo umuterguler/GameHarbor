@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Harbor</title>
-    <link rel="stylesheet" href="showProfilePageStyle.css">
+    <link rel="stylesheet" href="/../ProfilePage/showProfilePageStyle.css">
 
 </head>
 <body>
@@ -31,9 +31,8 @@
     
     <div class="container">
         <div class="profile_header">
-          <img src="/imgs/account.png" alt="Profil Fotografi" class="profile_picture">
-          <h2 class="profile_name"> THERE IS NO USER WITH THIS USERNAME</h2>
-          <a href="/HomePage/index.php"> <br><br> <Button id="nousernamebutton">Home Page</Button></a>  
+          <h2 class="profile_name"> THERE IS NO GAME WITH THIS NAME</h2>
+          <a href="/HomePage/index.php"> <br><br> <Button id="nogamebutton">Home Page</Button></a>  
         </div>
 
 

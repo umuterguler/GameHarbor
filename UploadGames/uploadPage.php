@@ -17,16 +17,7 @@ else
 {
     header("Location: /ProfilePage/loginPage.php");
 }
-// echo $user["username"];
-
-
-
-    
-    
-    
-   
-    
-    
+// echo $user["username"];    
 
     // $mysqli = require __DIR__ . "/../ProfilePage/database.php";
 
@@ -70,7 +61,11 @@ else
             
             <ul class="nav__links">
                 <form class="full_search_form" action="/ProfilePage/publicProfilePage.php" method="post" enctype="multipart/form-data">
-                    <input id="search_Bar" type="text" placeholder="Profile Search" name="search_name">
+                    <input id="search_Bar" type="text" placeholder="Profile Search(without @)" name="search_name">
+                    <button id="search_Button" type="submit">&#128270</button>
+                </form>
+                <form class="full_search_form" action="/GamePages/searchGamePage.php" method="post" enctype="multipart/form-data">
+                    <input id="search_Bar" type="text" placeholder="Game Search" name="search_game">
                     <button id="search_Button" type="submit">&#128270</button>
                 </form>
 
