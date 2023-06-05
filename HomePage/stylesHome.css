@@ -139,7 +139,7 @@ button:hover::before {
 }
 
 .top_mid_space {
-    min-height: 100px;
+    min-height: 135px;
     height: 50px;
     box-sizing: border-box;
     border-style: solid;
@@ -166,8 +166,9 @@ button:hover::before {
     border-radius: 50px;
     background-size: cover;
     margin: auto;
-    width: 90%;
+    width: 80%;
     overflow: hidden;
+    margin-top: 15px;
 
 }
 
@@ -255,6 +256,7 @@ button:hover::before {
 }
 
 
+
 /* .game_Types {
     display:flex;
     box-sizing: border-box;
@@ -267,15 +269,54 @@ button:hover::before {
 }
 
 .game_Type{
-  border: 8px solid darkslategray;
-  border-radius: 40px;
-  padding: 10px;
-  margin: 75px;
-  height: 200px;
-  text-align: center;
+    border: 8px solid darkslategray;
+    border-radius: 40px;
+    padding: 10px;
+    height: 220px;
+    width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 1000;
+    font-size: 17px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    
+    }
 
-  font-weight: 1000;
-  font-size: 17px;
+.game_Type_2{
+    border: 8px solid darkslategray;
+    border-radius: 40px;
+    padding: 10px;
+    height: 400px;
+    width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 1000;
+    font-size: 17px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 25px;
+        
+    } 
+
+        
+.index_img_evrim{
+  border-radius: 5%;
+  height: 380px;
+  text-align: center;
+  flex:1;
+  cursor:pointer;
+  margin: 65px;
+  width:  1200px;
+  border-radius: 30px;
+
 }
 
 .game_Img{
@@ -284,7 +325,10 @@ button:hover::before {
   text-align: center;
   flex:1;
   cursor:pointer;
+  margin: 100px;
+
 }
+
 
 /* new page */
 

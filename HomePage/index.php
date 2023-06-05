@@ -32,6 +32,7 @@ $games = DB::get("SELECT * FROM upload ORDER BY id DESC");
                     <input id="search_Bar" type="text" placeholder="Game Search" name="search_game">
                     <button id="search_Button" type="submit">&#128270</button>
                 </form>  search bar ortada versiyon -->  
+                <img src="" alt="">
         </div> 
         <nav>
             <ul class="nav__links">
@@ -98,20 +99,24 @@ $games = DB::get("SELECT * FROM upload ORDER BY id DESC");
     <section>
         <main class="game_Types">
             <div class="game_Type">
+                <a href="/ProfilePage/allUsers.php">
+                    <img src="/imgs/allUsersButton.png" class="game_Img" alt=""> </a>
+
+                <a href="/GamePages/allGames.php">
+                    <img src="/imgs/allGamesButton.png" class="game_Img" alt=""> </a>    
+
+                <a href="/contactPage.html">
+                    <img src="/imgs/contactUsButton.png" class="game_Img" alt=""> </a>    
+            </div>
+            <div class="game_Type_2">
+                <a >
+                    <img src="/imgs/evrimGH2.png" class="index_img_evrim" alt=""> </a>
+            </div>
+           <!--   <div class="game_Type">
                 <h4>All Games</h4>
                 <a href="/GamePages/allGames.php">
                     <img src="/imgs/action.png" class="game_Img" alt=""> </a>
-            </div>
-            <div class="game_Type">
-                <h4>All Games</h4>
-                <a href="/GamePages/allGames.php">
-                    <img src="/imgs/action.png" class="game_Img" alt=""> </a>
-            </div>
-            <div class="game_Type">
-                <h4>All Games</h4>
-                <a href="/GamePages/allGames.php">
-                    <img src="/imgs/action.png" class="game_Img" alt=""> </a>
-            </div>
+            </div> -->
         </main>
         
     </section>

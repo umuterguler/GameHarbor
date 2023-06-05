@@ -1,20 +1,34 @@
 <?php
 
-
         $mysqli = require __DIR__ . "/database.php";
 
         // $_POST = $search_name;
-        $search_name = $_POST['search_name'];
-        $sql2 = "SELECT * FROM user WHERE username COLLATE utf8mb4_unicode_ci = '$search_name'";
-        $result = $mysqli->query($sql2);
-        
-        
-        if ($result->num_rows > 0) {
-            $user = $result->fetch_assoc();
-            
-        } else {
-            header("Location: /ProfilePage/noUserExist.php");
+
+        if(isset($_POST['search_name']))
+        {
+            $search_name = $_POST['search_name'];
+            $sql2 = "SELECT * FROM user WHERE username COLLATE utf8mb4_unicode_ci = '$search_name'";
+            $result = $mysqli->query($sql2);
+
+            if ($result->num_rows > 0) {
+                $user = $result->fetch_assoc();
+                
+            } else {
+                header("Location: /ProfilePage/noUserExist.php");
+            }
         }
+
+
+        else if(isset($_POST['search_name_all_users']))
+        {
+            $search_name_all_users = $_POST['search_name_all_users'];
+            $sql3 = "SELECT * FROM user WHERE name COLLATE utf8mb4_unicode_ci = '$search_name_all_users'";
+            $result2 = $mysqli->query($sql3); 
+            $result2 = $user = $result2->fetch_assoc();
+        }
+
+        
+        
 
         switch (true) {
             case (0 <= $user['game_counter'] && $user['game_counter'] <= 3):
@@ -41,9 +55,7 @@
             default:
                 echo "Unknown Role";
                 break;
-        }
-        
-    
+        }    
 ?>
 
 <!DOCTYPE html>
@@ -57,29 +69,47 @@
 
 </head>
 <body>
-    
-    <header>
+<header>
         <a href="/HomePage/index.php"><img class="nav__logo" src="/imgs/logo.png" alt="error"/></a>     
-        <nav>
-            <ul class="nav__links">
-
-                <form class="full_search_form" action="publicProfilePage.php" method="post" enctype="multipart/form-data">
+        <div class="top_mid_space">
+            <!-- <form class="full_search_form" action="/ProfilePage/publicProfilePage.php" method="post" enctype="multipart/form-data">
                     <input id="search_Bar" type="text" placeholder="Profile Search(without @)" name="search_name">
                     <button id="search_Button" type="submit">&#128270</button>
                 </form>
                 <form class="full_search_form" action="/GamePages/searchGamePage.php" method="post" enctype="multipart/form-data">
                     <input id="search_Bar" type="text" placeholder="Game Search" name="search_game">
                     <button id="search_Button" type="submit">&#128270</button>
-                </form>
+                </form>  search bar ortada versiyon -->  
+                <img src="" alt="">
+        </div> 
+        <nav>
+            <ul class="nav__links">
+                <div class="search-container">
+                    <div class="search-input">
+                        <form class="full_search_form" action="publicProfilePage.php" method="post" enctype="multipart/form-data">
+                            <input id="search_Bar" type="text" placeholder="Profile Search(without @)" name="search_name">
+                            <button id="search_Button" type="submit">&#128270</button>
+                        </form>
+                        <form class="full_search_form" action="/GamePages/searchGamePage.php" method="post" enctype="multipart/form-data">
+                            <input id="search_Bar" type="text" placeholder="Game Search" name="search_game">
+                            <button id="search_Button" type="submit">&#128270</button>
+                        </form> 
+                    </div>
+                    
+                </div>
+                <div class="other_Buttons">
+                    <li><a href="/HomePage/index.php"><button>Home Page</button></a></li>
+                    <li><a href="/UploadGames/uploadPage.php"><Button>Upload Game</Button></a></li>
+                    <li><a href="showProfilePage.php"><button>Profile</button></a></li>
+                    <li><a href="/contactPage.html"><button>Contact</button></a></a></li>
+                </div>
                 
-                <li><a href="/HomePage/index.php"><button>Home Page</button></a></li>
-                <li><a href="/UploadGames/uploadPage.php"><Button>Upload Game</Button></a></li>
-                <li><a href="showProfilePage.php"><button>Profile</button></a></li>
-                <li><a href="/contactPage.html"><button>Contact</button></a></a></li>
+                
             </ul>
         </nav>
     </header>
-   
+    
+    
     
     <div class="container">
         <div class="profile_header">

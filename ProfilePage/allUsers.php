@@ -1,6 +1,7 @@
 <?php
-require 'config.php';
-$games = DB::get("SELECT * FROM upload ORDER BY id DESC");
+
+require __DIR__ . "/../GamePages/config.php";
+$users = DB::get("SELECT * FROM user ORDER BY id DESC");
 
 ?>
 
@@ -61,22 +62,22 @@ $games = DB::get("SELECT * FROM upload ORDER BY id DESC");
     
 
     <section class="game_Item">
-        <?php foreach($games as $k => $v) :
-        $photo = PATH.  "UploadGames/uploads/$v->image_url_1"
+        <?php foreach($users as $k => $v) :
+        // $photo = PATH.  "UploadGames/uploads/$v->image_url_1"
 
         
         ?>
         <article class="article-wrapper">
             <div>
                 <div class="rounded-lg container-project">
-                    <a onclick="redirectToSearchPage('<?php echo $v->game_name; ?>')">
-                        <img class="item_Img" src="<?php echo $photo; ?>" alt="">
+                    <a onclick="redirectToPublicProfilePage('<?php echo $v->name; ?>')">
+                        <img class="item_Img" src="/imgs/account.png" alt="">
                     </a>
                 </div>
                 <div class="project-info">
                     <div class="flex-pr">
                         <div class="project-title text-nowrap">
-                            <?php echo $v->game_name; ?>    
+                            <?php echo $v->name; ?>    
                         </div>
                         <div class="project-hover">
                             <svg style="color: black;" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" color="black" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor"><line y2="12" x2="19" y1="12" x1="5"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -89,15 +90,15 @@ $games = DB::get("SELECT * FROM upload ORDER BY id DESC");
         <?php endforeach; ?>
             </section>
             <script>
-            function redirectToSearchPage(gameName) {
+            function redirectToPublicProfilePage(name) {
                 var form = document.createElement('form');
-                form.action = 'searchGamePage.php';
+                form.action = 'publicProfilePage.php';
                 form.method = 'post';
 
                 var input = document.createElement('input');
                 input.type = 'hidden';
-                input.name = 'search_game';
-                input.value = gameName;
+                input.name = 'search_name_all_users';
+                input.value = name;
 
                 form.appendChild(input);
                 document.body.appendChild(form);
