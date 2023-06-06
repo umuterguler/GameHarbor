@@ -8,8 +8,8 @@
 }
 
 body {
+
     background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(68, 116, 126, 1) 0%, rgba(133, 164, 178, 1) 47%, rgba(179, 193, 205, 1) 100%);
     font-family: Arial, sans-serif;
 }
 
@@ -27,20 +27,37 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
-    background-color: transparent;
+    background-color: #ff751e;
+    transition: opacity 0.5s, transform 0.5s;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    border-radius: 30px;
+    margin: 35px 150px 20px 150px;
+}
+
+.header-hidden {
+    opacity: 0; 
+    transform: translateY(-100%);
+    pointer-events: none;
 }
 
 .nav__logo {
     width: 150px;
     height: 150px;
     cursor: pointer;
-    border: 5px solid darkslategray;
+    /* border: 5px solid #c63f00; */
+    border: 5px solid rgb(5, 1, 83);
     border-radius: 100px;
+    margin-left: -60px;
 }
 
 .nav__links {
     list-style: none;
     background-color: transparent;
+    margin-right: -1px;
 }
 
 .nav__links li {
@@ -62,8 +79,8 @@ button {
     border-radius: 50px;
     color: white;
     z-index: 1;
-    background: rgb(47, 79, 79);
-    background: linear-gradient(90deg, rgba(47, 79, 79, 1) 0%, rgba(60, 120, 133, 1) 100%);
+    background: rgb(2, 0, 36);
+    background: rgb(5, 1, 83);
     position: relative;
     font-weight: 1000;
     font-size: 17px;
@@ -96,17 +113,24 @@ button:hover::before {
     width: 100%;
 }
 
+.other_Buttons {
+    margin-right: -70px;
+    margin-left: 30px;
+    margin-top: -5px;
+}
+
 .search-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 30px;
     margin-right: 30px;
 }
 
 .search-input {
     margin-bottom: 10px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: -80px;
 }
 
 #search_Bar {
@@ -117,7 +141,7 @@ button:hover::before {
     cursor: pointer;
     transition: all 0.3s ease 0s;
     border-style: solid;
-    border-color: darkslategray;
+    border-color: rgb(5, 1, 83);
     border-width: 3.5px;
     margin-right: 29px;
     margin-top: 5px;
@@ -126,7 +150,7 @@ button:hover::before {
 
 #search_Button {
     padding: 8px 18px;
-    background-color: darkslategray;
+    background-color: rgb(5, 1, 83);
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -138,17 +162,19 @@ button:hover::before {
     background-color: slategray;
 }
 
+
 .top_mid_space {
     min-height: 135px;
     height: 50px;
     box-sizing: border-box;
     border-style: solid;
     border-width: 6px;
-    border-color: darkslategray;
+    border-color: rgb(5, 1, 83);
     border-radius: 50px;
     margin: 200px;
-    width: 500px;
+    width: 370px;
     position: absolute;
+    margin: 125px;
 }
 
 .image_Slider{
@@ -157,8 +183,8 @@ button:hover::before {
     height: 10vh;
     box-sizing: border-box;
     border-style: solid;
-    border-width: 10px;
-    border-color: darkslategray;
+    border-width: 7px;
+    border-color: #ff751e   ;
     border-radius: 50px;
     margin: auto;
     
@@ -202,44 +228,6 @@ button:hover::before {
     color: black;
 }
 
-.left_Arrow,
-.right_Arrow {
-    background: #fff;
-    position: absolute;
-    top:46%;
-    width: 2em;
-    height: 2em;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transform: 0.3s;
-}
-
-.left_Arrow:hover,
-.right_Arrow:hover{
-    background: #000;
-    color:#fff;
-}
-
-.left_Arrow{
-    left: 1em;
-}
-
-.right_Arrow{
-    right: 1em;
-}
-
-.image-fade{
-    animation: imgFade 0.5s ease-in-out;
-}
-
-@keyframes imgFade{
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
-
 .game_Types {
     display:flex;
     box-sizing: border-box;
@@ -268,14 +256,16 @@ button:hover::before {
     margin-right: auto;
 
     margin-bottom: 30px;
+    margin-top: 35px;
 
     padding: 20px;
     width: 60%;
     height: 100%;;
     align-items: center;
     text-align: center;
-    border: 5px solid darkslategray;
-    border-radius: 6%;
+
+    border: 4px solid #ff751e;
+    border-radius: 50px;
 }
 
 .container-project {
@@ -296,14 +286,14 @@ button:hover::before {
     margin: 5px;
     border: 4px solid transparent;
     cursor: pointer;
-    background-color: white;
-    border: 5px solid #015e5e;
+    background-color: rgb(2, 0, 36);
+    border: 5px solid #ff751e;
   }
   
   .article-wrapper:hover {
-    -webkit-box-shadow: 10px 10px 0 #2f4f4f, 20px 20px 0 #2f4f4f;
-    box-shadow: 10px 10px 0 #396d6d, 20px 20px 0 #2f4f4f;
-    border-color: #24c7c7;
+    -webkit-box-shadow: 10px 10px 0 #ff751e, 20px 20px 0 #ff751e;;
+    box-shadow: 10px 10px 0 #c63f00, 20px 20px 0 #ff751e;;
+    border-color: #ff751e;
     -webkit-transform: translate(-20px, -20px);
     -ms-transform: translate(-20px, -20px);
     transform: translate(-20px, -20px);
@@ -333,6 +323,7 @@ button:hover::before {
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 20px;
+
   }
   
   .project-title {
@@ -340,11 +331,13 @@ button:hover::before {
     margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
-    color: black;
+    white-space: normal;
+    word-wrap: break-word;
+    color: #ffffff;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+
   }
   
   
@@ -373,8 +366,8 @@ button:hover::before {
   
   
   .game_Item{
-    border: 1px solid #2f4f4f;
-    border-radius: 30px;
+    border: 4px solid #ff751e;
+    border-radius: 50px;
     padding: 25px;   
     display: flex;
     flex-wrap: wrap;
@@ -389,4 +382,27 @@ button:hover::before {
 
 #game_Description{
     font-size:  large;
+    color: #ffffff;
+}
+
+#credits{
+    color: #ffffff;
+}
+
+.description_container{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 30px;
+    margin-top: 35px;
+
+    padding: 20px;
+
+    height: 100%;;
+    align-items: center;
+    text-align: center;
+    width: 99%;
+    border: 4px solid #ff751e;
+    border-radius: 50px;
 }

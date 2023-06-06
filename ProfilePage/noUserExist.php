@@ -12,14 +12,7 @@
 <header>
         <a href="/HomePage/index.php"><img class="nav__logo" src="/imgs/logo.png" alt="error"/></a>     
         <div class="top_mid_space">
-            <!-- <form class="full_search_form" action="/ProfilePage/publicProfilePage.php" method="post" enctype="multipart/form-data">
-                    <input id="search_Bar" type="text" placeholder="Profile Search(without @)" name="search_name">
-                    <button id="search_Button" type="submit">&#128270</button>
-                </form>
-                <form class="full_search_form" action="/GamePages/searchGamePage.php" method="post" enctype="multipart/form-data">
-                    <input id="search_Bar" type="text" placeholder="Game Search" name="search_game">
-                    <button id="search_Button" type="submit">&#128270</button>
-                </form>  search bar ortada versiyon -->  
+            
                 <img src="" alt="">
         </div> 
         <nav>
@@ -27,7 +20,7 @@
                 <div class="search-container">
                     <div class="search-input">
                         <form class="full_search_form" action="publicProfilePage.php" method="post" enctype="multipart/form-data">
-                            <input id="search_Bar" type="text" placeholder="Profile Search(without @)" name="search_name">
+                            <input id="search_Bar" type="text" placeholder="Profile Search (Without @)" name="search_name">
                             <button id="search_Button" type="submit">&#128270</button>
                         </form>
                         <form class="full_search_form" action="/GamePages/searchGamePage.php" method="post" enctype="multipart/form-data">
@@ -65,5 +58,6 @@
         <li><a href="logoutPage.php"><button id="btn3">Log Out</button></a></li> -->
         
     </div>
-            
+    <script src="/dynamic.js" > </script>             
 </body>
+</html>

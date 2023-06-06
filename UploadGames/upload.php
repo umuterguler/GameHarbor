@@ -56,3 +56,4 @@ if (isset($_POST['submit']) && isset($_FILES['gameImage']) && isset($_POST['name
     header("Location: /contact.html");
     echo "son else'e girdin salak";
 }
+?>

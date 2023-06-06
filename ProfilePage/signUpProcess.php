@@ -57,3 +57,4 @@ if ($stmt->execute()) {
 // print_r($_POST);
 // var_dump($password_hash);
 
+?>

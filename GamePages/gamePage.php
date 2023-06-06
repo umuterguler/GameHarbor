@@ -54,14 +54,7 @@ session_start();
     <header>
         <a href="/HomePage/index.php"><img class="nav__logo" src="/imgs/logo.png" alt="error"/></a>     
         <div class="top_mid_space">
-            <!-- <form class="full_search_form" action="/ProfilePage/publicProfilePage.php" method="post" enctype="multipart/form-data">
-                    <input id="search_Bar" type="text" placeholder="Profile Search(without @)" name="search_name">
-                    <button id="search_Button" type="submit">&#128270</button>
-                </form>
-                <form class="full_search_form" action="/GamePages/searchGamePage.php" method="post" enctype="multipart/form-data">
-                    <input id="search_Bar" type="text" placeholder="Game Search" name="search_game">
-                    <button id="search_Button" type="submit">&#128270</button>
-                </form>  search bar ortada versiyon -->  
+            
                 <img src="" alt="">
         </div> 
         <nav>
@@ -69,7 +62,7 @@ session_start();
                 <div class="search-container">
                     <div class="search-input">
                         <form class="full_search_form" action="/ProfilePage/publicProfilePage.php" method="post" enctype="multipart/form-data">
-                            <input id="search_Bar" type="text" placeholder="Profile Search(without @)" name="search_name">
+                            <input id="search_Bar" type="text" placeholder="Profile Search (Without @)" name="search_name">
                             <button id="search_Button" type="submit">&#128270</button>
                         </form>
                         <form class="full_search_form" action="searchGamePage.php" method="post" enctype="multipart/form-data">
@@ -110,7 +103,7 @@ session_start();
             <p><?php echo $upload[0]->game_description; ?></p><br>
                 
             </div>
-            <div id="credits">
+            <div >
                 <br>
                 <h2>Credits</h2><br>
                 <br>
@@ -138,13 +131,16 @@ session_start();
                         document.getElementById("myForm").submit();
                     }
                 </script>
+                
 
                     <!-- <a href="gamePage.php<? //php echo "/". $v->id ?>"> -->
                 </section>
+                
             </div>
+            
             
         </div>
     </section>
-
+    <script src="/dynamic.js" > </script>
 </body>
 </html>

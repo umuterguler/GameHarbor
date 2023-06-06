@@ -8,8 +8,8 @@
 }
 
 body {
+
     background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(68, 116, 126, 1) 0%, rgba(133, 164, 178, 1) 47%, rgba(179, 193, 205, 1) 100%);
     font-family: Arial, sans-serif;
 }
 
@@ -27,20 +27,40 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
-    background-color: transparent;
+    background-color: #ff751e;
+    transition: opacity 0.5s, transform 0.5s;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+ 
+    z-index: 999;
+    border-radius: 30px;
+    margin: 35px 150px 20px 150px;
+}
+
+
+.header-hidden {
+    opacity: 0; 
+    transform: translateY(-100%);
+    pointer-events: none;
 }
 
 .nav__logo {
     width: 150px;
     height: 150px;
     cursor: pointer;
-    border: 5px solid darkslategray;
+    /* border: 5px solid #c63f00; */
+    border: 5px solid rgb(5, 1, 83);
     border-radius: 100px;
+    margin-left: -60px;
 }
 
 .nav__links {
     list-style: none;
     background-color: transparent;
+    margin-right: -80px;
+    margin-bottom: 8px;
 }
 
 .nav__links li {
@@ -56,14 +76,22 @@ header {
     color: #edf0f1;
 }
 
+.other_Buttons {
+    margin-right: -70px;
+    margin-left: 30px;
+    margin-top: -7px;
+    margin-bottom: -1px;
+
+}
+
 button {
     padding: 8px 15px;
     border: unset;
     border-radius: 50px;
     color: white;
     z-index: 1;
-    background: rgb(47, 79, 79);
-    background: linear-gradient(90deg, rgba(47, 79, 79, 1) 0%, rgba(60, 120, 133, 1) 100%);
+    /* background: rgb(2, 0, 36); */
+    background: rgb(5, 1, 83);
     position: relative;
     font-weight: 1000;
     font-size: 17px;
@@ -100,6 +128,7 @@ button:hover::before {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 30px;
     margin-right: 30px;
 }
 
@@ -117,7 +146,7 @@ button:hover::before {
     cursor: pointer;
     transition: all 0.3s ease 0s;
     border-style: solid;
-    border-color: darkslategray;
+    border-color: rgb(5, 1, 83);
     border-width: 3.5px;
     margin-right: 29px;
     margin-top: 5px;
@@ -126,7 +155,7 @@ button:hover::before {
 
 #search_Button {
     padding: 8px 18px;
-    background-color: darkslategray;
+    background-color: rgb(5, 1, 83);
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -144,18 +173,18 @@ button:hover::before {
     box-sizing: border-box;
     border-style: solid;
     border-width: 6px;
-    border-color: darkslategray;
+    border-color: rgb(5, 1, 83);
     border-radius: 50px;
     margin: 200px;
-    width: 500px;
+    width: 370px;
     position: absolute;
+    margin: 125px;
 }
 
 .contact-icon{
     width: 70px; 
     height: 70px; 
     object-fit: contain;
-    
 }
 
 
@@ -163,7 +192,7 @@ button:hover::before {
 
     display: block; 
     margin: auto;
-
+    margin-top: 35px;
     margin-bottom: 50px;
     height: auto;
     width: 500px;

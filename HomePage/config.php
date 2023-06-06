@@ -11,3 +11,4 @@ define('PATH',	'http://localhost:8080/');
 
 
 include 'db.php';
+?>
