@@ -24,8 +24,7 @@ $games = DB::get("SELECT * FROM upload ORDER BY id DESC");
     <header>
         <a href="index.php"><img class="nav__logo" src="/imgs/logo.png" alt="error"/></a>     
         <div class="top_mid_space">
-           
-                <img src="" alt="">
+                <img id="ad_img" src="/imgs/google_ads.jpg" alt="">
         </div> 
         <nav>
             <ul class="nav__links">
