@@ -62,7 +62,7 @@ $users = DB::get("SELECT * FROM user ORDER BY id DESC");
         <article class="article-wrapper">
             <div>
                 <div class="rounded-lg container-project">
-                    <a onclick="redirectToPublicProfilePage('<?php echo $v->name; ?>')">
+                    <a onclick="redirectToPublicProfilePage('<?php echo $v->username; ?>')">
                         <img class="item_Img" src="/imgs/account.png" alt="">
                     </a>
                 </div>
@@ -82,15 +82,15 @@ $users = DB::get("SELECT * FROM user ORDER BY id DESC");
         <?php endforeach; ?>
             </section>
             <script>
-            function redirectToPublicProfilePage(name) {
+            function redirectToPublicProfilePage(username) {
                 var form = document.createElement('form');
                 form.action = 'publicProfilePage.php';
                 form.method = 'post';
 
                 var input = document.createElement('input');
                 input.type = 'hidden';
-                input.name = 'search_name_all_users';
-                input.value = name;
+                input.name = 'search_name';
+                input.value = username;
 
                 form.appendChild(input);
                 document.body.appendChild(form);

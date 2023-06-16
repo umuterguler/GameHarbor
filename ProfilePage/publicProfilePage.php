@@ -19,13 +19,13 @@
         }
 
 
-        else if(isset($_POST['search_name_all_users']))
-        {
-            $search_name_all_users = $_POST['search_name_all_users'];
-            $sql3 = "SELECT * FROM user WHERE name COLLATE utf8mb4_unicode_ci = '$search_name_all_users'";
-            $result2 = $mysqli->query($sql3); 
-            $result2 = $user = $result2->fetch_assoc();
-        }
+        // else if(isset($_POST['search_name_all_users']))
+        // {
+        //     $search_name_all_users = $_POST['search_name_all_users'];
+        //     $sql3 = "SELECT * FROM user WHERE name COLLATE utf8mb4_unicode_ci = '$search_name_all_users'";
+        //     $result2 = $mysqli->query($sql3); 
+        //     $result2 = $user = $result2->fetch_assoc();
+        // } //old version of user profile check. used to used on allUsers page
 
         
         
