@@ -55,8 +55,6 @@ $users = DB::get("SELECT * FROM user ORDER BY id DESC");
 
     <section class="game_Item">
         <?php foreach($users as $k => $v) :
-        // $photo = PATH.  "UploadGames/uploads/$v->image_url_1"
-
         
         ?>
         <article class="article-wrapper">

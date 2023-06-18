@@ -48,12 +48,6 @@
           <h2 class="profile_name"> THERE IS NO GAME WITH THIS NAME</h2>
           <a href="/HomePage/index.php"> <br><br> <Button id="nogamebutton">Home Page</Button></a>  
         </div>
-
-
-
-        <!-- <li><a href="passwordChange.php"><button id="btn3">Change Password</button></a></li>
-        <li><a href="emailChange.php"><button id="btn3">Change E-mail</button></a></li>
-        <li><a href="logoutPage.php"><button id="btn3">Log Out</button></a></li> -->
         
     </div>
     <script src="/dynamic.js" > </script>        

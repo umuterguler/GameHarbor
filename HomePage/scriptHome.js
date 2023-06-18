@@ -8,10 +8,6 @@ $(document).ready(function() {
     slides.hide();
     $(slides[slideIndex]).fadeIn();
 
-    // slides.click(function() {
-    //   var clickedIndex = $(this).index();
-    //   goToSlide(clickedIndex);
-    // });
   }
 
   function nextSlide() {
@@ -32,10 +28,6 @@ $(document).ready(function() {
     $(".arrow-right").fadeIn();
   }
 
-  // function goToSlide(index) {
-  //   slideIndex = index;
-  //   window.location.href = "/GamePages/gamePage.php/" + ($(".slider-image").length - 1 - slideIndex);
-  // }
 
   $(".arrow-left").click(function() {
     previousSlide();
@@ -70,9 +62,7 @@ $(document).ready(function() {
   
   window.addEventListener('scroll', handleScroll);
   
-
   
-
   showSlide();
 
   setInterval(nextSlide, 3000); 

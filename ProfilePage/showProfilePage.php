@@ -19,6 +19,8 @@ else
     header("Location: loginPage.php");
 }
 
+
+
 switch (true) {
     case (0 <= $user['game_counter'] && $user['game_counter'] <= 3):
         $role = "Newbie";

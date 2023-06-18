@@ -122,7 +122,7 @@
                         window.location.href = "/GamePages/gamePage.php/" + gameID;
                     }
                 </script>
-                    <!-- <a href="gamePage.php<? //php echo "/". $v->id ?>"> -->
+
                 </section>
             </div>
             

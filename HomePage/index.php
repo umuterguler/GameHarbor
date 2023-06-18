@@ -106,11 +106,6 @@ $games = DB::get("SELECT * FROM upload ORDER BY id DESC");
                 <a >
                     <img src="/imgs/evrimGH2.png" class="index_img_evrim" alt=""> </a>
             </div>
-           <!--   <div class="game_Type">
-                <h4>All Games</h4>
-                <a href="/GamePages/allGames.php">
-                    <img src="/imgs/action.png" class="game_Img" alt=""> </a>
-            </div> -->
         </main>
         
     </section>

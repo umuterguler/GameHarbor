@@ -131,8 +131,6 @@ session_start();
                     }
                 </script>
                 
-
-                    <!-- <a href="gamePage.php<? //php echo "/". $v->id ?>"> -->
                 </section>
                 
             </div>

@@ -17,28 +17,6 @@ else
 {
     header("Location: /ProfilePage/loginPage.php");
 }
-// echo $user["username"];    
-
-    // $mysqli = require __DIR__ . "/../ProfilePage/database.php";
-
-    // $sql = "SELECT * FROM user
-    //         WHERE id = {$_SESSION["user_id"]}";
-
-    // $sql = "SELECT * FROM upload
-    //         WHERE id = $id";
-
-    // $autoCredit = $user['username'];
-    
-    // $update_query = "UPDATE upload SET credit = 'sa' WHERE id= $id";
-
-    // $result =  $mysqli->query($update_query);
-
-    // $upload = $result->fetch_assoc();
-    
-
-
-// $mysqli2 = require __DIR__ . "/../ProfilePage/database.php";
-
 
 ?>
 
@@ -94,17 +72,7 @@ else
         <?php endif ?>
 
         <form  action="upload.php" method="post" enctype="multipart/form-data">
-
-            <!-- <h3>Game Name</h3>
-            <input class="game_Name" type="text" placeholder="Game Name" required> <br>
-
-            <h3>Game Description</h3>
-            <input class="game_Description" type="text" placeholder="Game Description" required> <br>
-
-            <h3>Game Credits</h3>
-            <input class="game_Credits" type="text" placeholder="Game Credits" required> <br> -->
-            <!-- id="image_Input" accept="image/jpg, image/png" required -->
-            
+      
             <h1>Game Name</h1>
             <textarea class="game_Name" type="text" placeholder="Game Name" name="name"></textarea><br><br>
 
@@ -119,9 +87,7 @@ else
             <input class="game_Photo" type="file" name="gameImage" > <br><br>
 
             <input id="form-input" type="submit" name="submit" value="Upload">
-            <!-- <div id="send_Button">
-                <button>Send</button>
-            </div> -->
+
         </form>
     </section>
     <script src="/dynamic.js" > </script>     
